@@ -24,9 +24,6 @@ class FormMovie extends React.Component {
 
   submitForm(e) {
     e.preventDefault();
-  }
-
-  postEmployee() {
     const url = 'https://post-a-form.herokuapp.com/api/movies/';
     const data = this.state;
     Axios.post(url, data)
@@ -49,30 +46,30 @@ class FormMovie extends React.Component {
           <fieldset>
             <legend>Informations</legend>
             <div className="form-data">
-              <label htmlFor="lastname">Movie Name</label>
+              <label htmlFor="name">Movie Name</label>
               <input
                 type="text"
-                id="lastname"
-                name="lastname"
+                id="name"
+                name="name"
                 onChange={this.onChange}
-                value={this.state.lastname}
+                value={this.state.name}
               />
             </div>
 
             <div className="form-data">
-              <label htmlFor="firstname">Poster URL</label>
+              <label htmlFor="poster">Poster URL</label>
               <input
-                type="text"
-                id="firstname"
-                name="firstname"
+                type="url"
+                id="poster"
+                name="poster"
                 onChange={this.onChange}
-                value={this.state.firstname}
+                value={this.state.poster}
               />
             </div>
 
             <div className="form-data">
-              <label htmlFor="email">Comment</label>
-              <input
+              <label htmlFor="comment">Comment</label>
+              <textarea
                 type="textarea"
                 id="comment"
                 name="comment"
